@@ -1,6 +1,7 @@
+import React from "react";
 import { useState, useEffect, useRef } from "react";
 
-function SortPopup({ items, onClickItem }) {
+const SortPopup = React.memo(function SortPopup({ items, onClickItem }) {
   const [visiblePopup, setVisiblePopup] = useState(false);
   const sortRef = useRef();
   const [activeItem, setActiveItem] = useState(0);
@@ -41,7 +42,7 @@ function SortPopup({ items, onClickItem }) {
             fill="#2C2C2C"
           />
         </svg>
-        <b>Сортировка по:</b>
+        <b>Sort by:</b>
         <span onClick={toggleVisiblePopup}>{activeLabel}</span>
       </div>
       {visiblePopup && (
@@ -62,6 +63,6 @@ function SortPopup({ items, onClickItem }) {
       )}
     </div>
   );
-}
+});
 
 export default SortPopup;

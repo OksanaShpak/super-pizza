@@ -2,7 +2,7 @@ import { useState } from "react";
 import classNames from "classnames";
 import PropTypes from "prop-types";
 function PizzaBlock({ name, imageUrl, price, types, sizes }) {
-  const avaibleTypes = ["тонкое", "традиционное"];
+  const avaibleTypes = ["thin", "traditional"];
   const [activeType, setActiveType] = useState(types[0]);
 
   const [activeSize, setActiveSize] = useState(sizes[0]);
@@ -45,13 +45,13 @@ function PizzaBlock({ name, imageUrl, price, types, sizes }) {
                 disabled: !sizes.includes(size),
               })}
             >
-              {size} см.
+              {size} cm
             </li>
           ))}
         </ul>
       </div>
       <div className="pizza-block__bottom">
-        <div className="pizza-block__price">от {price} ₽</div>
+        <div className="pizza-block__price">from $ {price}</div>
         <div className="button button--outline button--add">
           <svg
             width="12"
